@@ -105,11 +105,12 @@ function App() {
             .style("left", e.pageX + 20 + "px")
             .style("top", e.pageY + 20 + "px")
             .text(`Year: ${d.year}, Month: ${d.month}, Temp: ${(Math.round((d.variance + baseTemp) * 1000)) / 1000}`)
+            .attr("data-year", d.year)
             .transition()
             .duration(500)
             .attr("hidden", null)
             .style("opacity", 0.8)
-            .attr("data-year", Math.round(d.year))
+
         })
         .on("mouseout", () => {
           d3.select(toolTip.current)
