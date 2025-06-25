@@ -109,7 +109,7 @@ function App() {
             .duration(500)
             .attr("hidden", null)
             .style("opacity", 0.8)
-            .attr("data-year", d.year)
+            .attr("data-year", Math.round(d.year))
         })
         .on("mouseout", () => {
           d3.select(toolTip.current)
